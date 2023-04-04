@@ -178,7 +178,7 @@ call MatchCrateLocal('[A-Z][A-Za-z0-9]*', 'cairoCrateType', ' nextgroup=cairoTyp
 
 " Standard library types
 
-let s:standardLibraryTypes = ["u128", "u256", "felt"]
+let s:standardLibraryTypes = ["u128", "u256", "felt252"]
 
 for s:standardLibraryType in s:standardLibraryTypes
     execute 'syntax keyword cairoLibraryType ' . s:standardLibraryType . ' nextgroup=cairoTypeParams'
