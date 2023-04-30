@@ -139,7 +139,6 @@ highlight default link cairoFalse cairoBoolean
 syntax region cairoString
             \ matchgroup=cairoQuote
             \ start="b\?'"
-            \ skip="\\'"
             \ end="'"
             \ contains=@Spell
 
@@ -237,18 +236,6 @@ for s:standardLibraryFunc in s:standardLibraryFuncs
 endfor
 
 "
-" Lifetimes
-"
-
-syntax match cairoUserLifetime "'[a-z][a-z0-9_]*"
-
-syntax match cairoInferredLifetime "'_"
-syntax match cairoStaticLifetime "'static"
-
-highlight default link cairoInferredLifetime cairoSpecialLifetime
-highlight default link cairoStaticLifetime cairoSpecialLifetime
-
-"
 " Type definitions
 "
 
@@ -308,14 +295,6 @@ syntax region cairoPattern
             \ end=')'
             \ contained
             \ contains=cairoMut,cairoRef,cairoDelimiter,cairoOperator,cairoLibraryType,cairoUserType,cairoIdentDef,cairoUnusedIdentDef,cairoUndecairocore
-
-"
-" Lifetime definitions
-"
-
-syntax match cairoLifetimeDef "'[a-z][a-z0-9_]*"
-            \ contained
-            \ containedin=cairoTypeDefParams
 
 "
 " Numbecairo
@@ -435,18 +414,15 @@ highlight default link cairoLibraryConst Constant
 highlight default link cairoLibraryFunc Function
 highlight default link cairoLibraryMacro Macro
 highlight default link cairoLibraryType Type
-highlight default link cairoLifetimeDef Special
 highlight default link cairoNumber Number
 highlight default link cairoOperator Operator
 highlight default link cairoQuote StringDelimiter
 highlight default link cairoRepeat Repeat
-highlight default link cairoSpecialLifetime Special
 highlight default link cairoString String
 highlight default link cairoTypeDef Typedef
 highlight default link cairoUserConst Constant
 highlight default link cairoUserFunc Function
 highlight default link cairoUserIdent Identifier
-highlight default link cairoUserLifetime Special
 highlight default link cairoUserMacro Macro
 highlight default link cairoUserType Type
 
